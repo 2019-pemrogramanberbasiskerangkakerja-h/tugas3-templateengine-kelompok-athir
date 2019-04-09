@@ -5,6 +5,13 @@ html
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
 
+  style.
+    body {
+    background-color: black;
+    }
+    h1{
+      color:white;
+    }
   body 
     div 
       .container
@@ -12,8 +19,8 @@ html
         form(method='POST' action='/') 
           div.form-group
             label(for='email') Email:
-            input#email.form-control(type='text', placeholder='name@email.com' name='RegUsername') 
+            input.form-control(type='text', placeholder='name@email.com' name='RegUsername') 
           div.form-group
             label(for='pw') Password:
-            input#pw.form-control(type='password', placeholder='********' name='RegPassword') 
+            input.form-control(type='password', placeholder='********' name='RegPassword') 
           button.btn.btn-primary(type='submit') Sign up
