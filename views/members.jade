@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+    background-color: black;
+    }
+    h1{
+      color:white; 
+    }
+    .half{
+      width:7%; 
+    }
+    .left{
+      float:left;
+    } 
+    .listContainer{
+      background-color:grey; 
+      border-radius:10px;
+      padding:10px; 
+      margin:20px;
+    }
+    p{ 
+      font-size:20px;
+      color:white;   
+      float:left;
+    }
+    a{
+      padding:10px; 
+      font-size:20px;
+      background-color:#2F4F4F;
+      color:white;
+      border-radius:10px;
+      margin-left:20px;
+    }
+  body 
+    div 
+      .container
+        h1= title  
+          each val in listMember 
+            div.listContainer 
+              p= val.id +" "+ val.nrp +" "+val.timeaccessstart+" "+val.timeaccessend  
+              a(href="/members/edit/#{val.id}") edit 
+              a(href="/members/delete/#{val.id}") delete 
+          
+        a(href="/") main page 

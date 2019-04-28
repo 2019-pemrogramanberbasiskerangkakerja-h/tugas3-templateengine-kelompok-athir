@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+    background-color: black;
+    color:white;
+    }
+    h1{
+      color:white;
+    }
+    .half{
+      width:20%; 
+    }
+    .left{
+      float:left;
+    }
+    a{
+      padding:10px;
+      margin-left:10px;
+      background-color:#008080;
+      border-radius:5px;
+      color:white;
+    }
+  body 
+    div 
+      .container
+        h1= title
+        form(method='POST' action='/regis') 
+          div.form-group
+            label(for='email') NRP:
+            input.form-control(type='text', placeholder='name@email.com' name='RegUsername') 
+          div.form-group
+            label(for='pw') Password:
+            input.form-control(type='password', placeholder='********' name='RegPassword')  
+          div.form-group 
+            label(for='pw') Time restricted access start, end:
+          div.form-group  
+            input.form-control.half.left(type='time',  placeholder='start' name='RegTimeAllowedStart')  
+            input.form-control.half(type='time',  placeholder='end' name='RegTimeAllowedEnd')  
+          button.btn.btn-primary(type='submit') Sign up
+          a(href="/") already have an account?
