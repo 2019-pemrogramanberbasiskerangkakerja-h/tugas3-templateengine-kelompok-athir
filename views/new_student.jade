@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+      color:white;
+      background-color: black;
+    }
+    h1{
+      color:white;
+    }
+    a{
+      padding:10px;
+      margin-right:10px;
+      background-color:#008080;
+      border-radius:5px;
+      color:white;
+    } 
+     .radio{
+       float:left;
+     }
+     .clear{
+       clear:both;
+     }
+     .radioForm{
+       margin:0px;
+       padding:0px;
+     }
+  body 
+    div 
+      .container 
+        if authAdmin
+          h1 anda sebagai admin 
+        
+        if session==null || authAdmin ==null
+          h1= title 
+          form(method='POST' action='/') 
+            div.form-group
+              label(for='email') NRP:
+              input.form-control(type='text', placeholder='5116100xxx' name='RegUsername')  
+            div.form-group.radioForm 
+              label(for='Group') Group:
+              //- sql---------------------------------------------------------------------------------------
+              each val in listHasil 
+                div.clear
+                  input.radio(type='radio', placeholder='group' value='#{val.gu_name}' name='group')  
+                  p #{val.gu_name}
+              
+            div.form-group.radioForm 
+              label(for='gate') gate:
+              //- sql---------------------------------------------------------------------------------------
+              each val in listHasil 
+                div.clear
+                  input.radio(type='radio', placeholder='gate' value='#{val.ga_name}' name='gate')  
+                  p #{val.ga_name}
+                
+              label(for='pw') 
+            div.form-group
+              label(for='pw') Password:
+              input.form-control(type='password', placeholder='********' name='RegPassword') 
+            button.btn.btn-primary(type='submit') Sign In
+            a(href="user") dont have an account?  
+        if authAdmin
+          a(href="gates") gate
+          a(href="users") members
+          a(href="logs") logs
+        if session
+          a(href="/logout/#{PublicId}") logout
+  
+    

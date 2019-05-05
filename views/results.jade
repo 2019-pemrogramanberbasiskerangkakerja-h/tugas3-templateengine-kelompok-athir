@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+  style.
+    body {
+    background-color: white;
+    color:white;
+    }
+    .jumbotron{
+    background-color:black; 
+    margin-top:100px;
+    padding:10px;
+    }  
+    a{
+      padding:10px;
+      margin-right:10px;
+      background-color:#008080;
+      border-radius:5px;
+      color:white;
+    } 
+    .but{
+      padding-top:20px;
+      
+    }
+  body 
+    div 
+      .container 
+        .jumbotron
+          if authAdmin
+            h1 anda sebagai admin
+          else 
+           h1 hello #{nrp} how are you today? 
+          h3.
+            NRP = #{nrp} 
+          h3.
+            Password = #{password}  
+          h3.
+            group = #{group}   
+          
+          div.but
+            if authAdmin
+              a(href="gates") gate
+              a(href="group") group
+              a(href="users") members
+              a(href="logs") logs 
+
+            a(href="/logout/#{nrp}") logout
+            a(href="/members/edit/#{id}") edit
+            a(href="/") main menu
+
+          
+
+            
+ 
+  
+

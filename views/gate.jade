@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+    background-color: black;
+    }
+    h1{
+      color:white; 
+    }
+    .half{
+      width:7%; 
+    }
+    .left{
+      float:left;
+    } 
+    .column {
+      float: left;
+      width: 30%;
+       
+      border-radius:10px;
+      padding:10px;  
+    }
+    .row{
+      background-color:rgba(255,255,255,0.3);
+      border-radius:10px;
+    }
+    .row:after {
+      content: "";
+      margin-bottom:20px;
+      display: table;
+      clear: both;
+    }
+    .listContainer{ 
+    }
+    .butPlace{
+      
+    }
+    p{ 
+      font-size:20px;
+      color:white;   
+      float:left;
+    }
+    a{
+      padding:10px; 
+      font-size:20px;
+      background-color:#2F4F4F;
+      color:white;
+      border-radius:10px;
+      margin-left:20px;
+    }
+  body 
+    div 
+      .container
+        h1= title  
+          each val in listGate 
+            div.row
+              div.column 
+                p= val.ga_id +" "+ val.ga_name +" "+val.ga_start +" "+val.ga_end 
+              div.column
+                //- a(href="/members/edit/#{val.ga_id}") edit 
+                a(href="/gates/#{val.ga_id}") detile  
+                form(  action='/group/#{val.ga_id}?_method=DELETE' method='POST')    
+                  button.btn(type='submit') delete
+          
+        a(href="/gatesForm") add gate 
+        a(href="/") main page 

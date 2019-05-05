@@ -1,0 +1,79 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+    background-color: black;
+    }
+    h1{
+      color:white; 
+    }
+    .half{
+      width:7%; 
+    }
+    .left{
+      float:left;
+    } 
+    .column {
+      float: left;
+      width: 30%;
+       
+      border-radius:10px;
+      padding:10px;  
+    }
+    .row{
+      background-color:rgba(255,255,255,0.3);
+      border-radius:10px;
+    }
+    .row:after {
+      content: "";
+      margin-bottom:20px;
+      display: table;
+      clear: both;
+    }
+    .listContainer{ 
+    }
+    .butPlace{
+      
+    }
+    p{ 
+      font-size:20px;
+      color:white;   
+      float:left;
+    }
+    a{
+      float:left;
+      padding:10px; 
+      font-size:20px;
+      background-color:#2F4F4F;
+      color:white;
+      border-radius:10px;
+      margin-left:20px;
+    }
+    .btn{
+      float:left; 
+      font-size:20px;
+      background-color:#2F4F4F;
+      color:white;
+      border-radius:10px;
+      margin-left:20px;
+    }
+  body 
+    div 
+      .container
+        h1= title  
+          each val in listMember 
+            div.row
+              div.column 
+                p= val.m_id +" "+ val.m_nrp +" "+val.m_grub 
+              div.column
+                //- a(href="/members/edit/#{val.m_id}") edit 
+                a(href="/users/#{val.m_id}") detile  
+                form(  action='/users/#{val.m_id}?_method=DELETE' method='POST')    
+                  button.btn(type='submit') delete
+          
+        a(href="/") main page 

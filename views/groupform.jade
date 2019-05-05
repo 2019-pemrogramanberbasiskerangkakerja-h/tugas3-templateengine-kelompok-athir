@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+
+  style.
+    body {
+      background-color: black;
+      color:white;
+    }
+    h1{
+      color:white;
+    }
+    .half{
+      width:20%; 
+    }
+    .left{
+      float:left;
+    }
+    a{
+      padding:10px;
+      margin-left:10px;
+      background-color:#008080;
+      border-radius:5px;
+      color:white;
+    }
+  body 
+    div 
+      .container
+        h1 add group
+        form(method='POST' action='/group') 
+          div.form-group
+            label(for='text') group name:
+            input.form-control(type='text', placeholder='text' name='group')  
+          each val in listHasil 
+              div.clear
+                input.radio(type='radio', placeholder='#{val.ga_name}' value='#{val.ga_id}' name='gate')  
+                p #{val.ga_name} 
+          button.btn.btn-primary(type='submit') Sign up 
+          a(href="/") main page 
